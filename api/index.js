@@ -15,14 +15,14 @@ app.use(cors({
 }));
 
 
-app.get('/test', (req,res)=>{
+app.get('/api/test', (req,res)=>{
   mongoose.connect(process.env.MONGO_URL);
   res.json('test ok');
     
 });
 
 let placeData;
-app.post('/place', (req,res) => {
+app.post('/api/place', (req,res) => {
   mongoose.connect(process.env.MONGO_URL);
   const {place} = req.body;
   console.log("in post place");
@@ -32,7 +32,7 @@ app.post('/place', (req,res) => {
       
 });
 
-app.get('/place', async (req,res) => {
+app.get('/api/place', async (req,res) => {
   mongoose.connect(process.env.MONGO_URL);
   try {
     if (!placeData) {
