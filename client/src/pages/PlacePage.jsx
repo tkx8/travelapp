@@ -3,6 +3,10 @@ import Header from "../Header";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Itinerary from "../Itinerary";
+import Food from "../Food";
+import Stay from "../Stay";
+import BonusGallery from "../BonusGallery";
+import Footer from "../Footer";
 
 
 
@@ -32,13 +36,13 @@ export default function PlacePage(){
           <div className="relative max-w-5xl mx-auto">
             <div className="mt-8 grid gap-2 grid-cols-[2fr,1fr] rounded-3xl overflow-hidden">
                 <div>
-                <img  src={place.IntroPhotos?.[0]} alt="Intro photo"/>
+                <img  className="w-full h-full object-cover" src={place.IntroPhotos?.[0]} alt="Intro photo"/>
 
                 </div>
                 <div className="grid ">
-                    <img src={place.IntroPhotos?.[1]} alt="Intro  photo"/>
+                    <img className="w-full h-full object-cover" src={place.IntroPhotos?.[1]} alt="Intro  photo"/>
                     <div className="overflow-hidden">
-                    <img src={place.IntroPhotos?.[2]} alt="Intro  photo"/>
+                    <img className="w-full h-full object-cover" src={place.IntroPhotos?.[2]} alt="Intro  photo"/>
                     </div>
                     
                 </div>
@@ -48,7 +52,11 @@ export default function PlacePage(){
         </div>
        
         <Itinerary place={place}/>
-          
+        <Food place={place}/>
+        <Stay place={place}/>
+        <BonusGallery place={place}/>
+        <Footer/>
+  
       </div>
     );
 }
