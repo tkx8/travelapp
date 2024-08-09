@@ -4,7 +4,7 @@ import Header from "../Header";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const countries = ["NewZealand,SouthIsland","China,XiAn", "SouthAfrica,CapeTown"];
+const countries = ["NewZealand,SouthIsland","China,XiAn", "SouthAfrica,CapeTown", "Spain,Ibiza", "China,ShangHai", "Italy,CinqueTerre"];
 
 export default function IndexPage(){
     const[place,setPlace] = useState('');
